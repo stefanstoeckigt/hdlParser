@@ -8,6 +8,11 @@ namespace VHDL.Parser.visitors
     class VisitLibrary_unit
     {
         /// <summary>
+        /// Parser error logger.
+        /// </summary>
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+
+        /// <summary>
         /// library_unit
         /// : secondary_unit | primary_unit
         /// ;

@@ -9,10 +9,14 @@ namespace VHDL.Parser.visitors
     {
 
         /// <summary>
+        /// Parser error logger.
+        /// </summary>
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+
+        /// <summary>
         /// 
         /// </summary>
         List<VisitContext_item> visitContext_items { get; set; }
-
 
         /// <summary>
         /// context_clause

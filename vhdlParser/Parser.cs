@@ -7,6 +7,11 @@ namespace VHDL.Parser
 {
     public class Parser
     {
+        /// <summary>
+        /// Parser error logger.
+        /// </summary>
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+
         public Parser (string data)
         {
             try
@@ -17,7 +22,7 @@ namespace VHDL.Parser
                 var commonTokenStream = new CommonTokenStream(lexer);
                 var parser = new vhdlParser(commonTokenStream);
 
-                var designFileParser = new parser.VisitDesignFile(parser.design_file());
+                var designFileParser = new visitors.VisitDesign_file(parser.design_file());
      
 
             }

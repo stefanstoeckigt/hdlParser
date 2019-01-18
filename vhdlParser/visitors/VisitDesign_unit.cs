@@ -8,6 +8,11 @@ namespace VHDL.Parser.visitors
     class VisitDesign_unit
     {
         /// <summary>
+        /// Parser error logger.
+        /// </summary>
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+
+        /// <summary>
         /// 
         /// </summary>
         VisitContext_clause visitContext_clause { get; set; }
