@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using VHDL.Parser;
 
 namespace HDL.Parser
 {
@@ -6,7 +8,12 @@ namespace HDL.Parser
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            using (StreamReader sr = new StreamReader(@".\Examples\example01.vhd"))
+            {
+                VHDL.Parser.visitors.VisitDesign_file designFile;
+                new VHDL.Parser.Parser(sr.ReadToEnd(), out designFile);
+            }
+
         }
     }
 }

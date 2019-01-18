@@ -5,7 +5,7 @@ using vhdl;
 
 namespace VHDL.Parser.visitors
 {
-    class VisitDesign_unit
+    public class VisitDesign_unit
     {
         /// <summary>
         /// Parser error logger.
@@ -15,12 +15,12 @@ namespace VHDL.Parser.visitors
         /// <summary>
         /// 
         /// </summary>
-        VisitContext_clause visitContext_clause { get; set; }
+        public VisitContext_clause visitContext_clause { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        VisitLibrary_unit visitLibrary_unit { get; set; }
+        public VisitLibrary_unit visitLibrary_unit { get; set; }
 
         /// <summary> 
         /// design_unit

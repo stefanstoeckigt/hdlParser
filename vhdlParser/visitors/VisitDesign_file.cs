@@ -6,7 +6,7 @@ using vhdl;
 
 namespace VHDL.Parser.visitors
 {
-    class VisitDesign_file
+    public class VisitDesign_file
     {
         /// <summary>
         /// Parser error logger.
@@ -17,7 +17,7 @@ namespace VHDL.Parser.visitors
         /// 
         /// </summary>
         [JsonProperty(PropertyName = "Design Units")]
-        List<VisitDesign_unit> visitDesign_units { get; set; }
+        public List<VisitDesign_unit> visitDesign_units { get; set; }
 
         /// <summary>
         /// design_file
@@ -27,6 +27,7 @@ namespace VHDL.Parser.visitors
         /// <param name="ctx"></param>
         public VisitDesign_file(vhdlParser.Design_fileContext ctx)
         {
+            visitDesign_units = new List<VisitDesign_unit>();
             if (ctx == null)
                 return;
 

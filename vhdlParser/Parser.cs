@@ -1,5 +1,7 @@
 ﻿using Antlr4.Runtime;
+using NLog;
 using System;
+using System.IO;
 using vhdl;
 
 // How-To: https://tomassetti.me/getting-started-with-antlr-in-csharp/
@@ -12,23 +14,28 @@ namespace VHDL.Parser
         /// </summary>
         private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
-        public Parser (string data)
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="designFile"></param>
+        public Parser (String data, out visitors.VisitDesign_file designFile)
         {
             try
             {
-
                 AntlrInputStream inputStream = new AntlrInputStream(data);
                 var lexer = new vhdlLexer(inputStream);
                 var commonTokenStream = new CommonTokenStream(lexer);
                 var parser = new vhdlParser(commonTokenStream);
 
-                var designFileParser = new visitors.VisitDesign_file(parser.design_file());
-     
+                designFile = new visitors.VisitDesign_file(parser.design_file());
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex);
+                designFile = null;
+                logger.Log(LogLevel.Error, ex, "VHDL Parsing: {0}", data);
             }
         }
 

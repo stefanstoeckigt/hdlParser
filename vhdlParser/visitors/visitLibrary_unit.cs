@@ -5,7 +5,7 @@ using vhdl;
 
 namespace VHDL.Parser.visitors
 {
-    class VisitLibrary_unit
+    public class VisitLibrary_unit
     {
         /// <summary>
         /// Parser error logger.

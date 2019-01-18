@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28307.271
+VisualStudioVersion = 15.0.27130.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hdl.Parser", "hdlParser\hdl.Parser.csproj", "{FC2A2247-2C15-48DD-82A1-6C1FBFB8EBD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HDL.Parser", "hdlParser\HDL.Parser.csproj", "{FC2A2247-2C15-48DD-82A1-6C1FBFB8EBD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VHDL.Parser", "vhdlParser\VHDL.Parser.csproj", "{0E05F25D-C6EA-4D29-A263-51BAB25B7A3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VHDL.Parser", "vhdlParser\VHDL.Parser.csproj", "{0E05F25D-C6EA-4D29-A263-51BAB25B7A3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

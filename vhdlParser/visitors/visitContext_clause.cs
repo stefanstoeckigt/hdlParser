@@ -5,7 +5,7 @@ using vhdl;
 
 namespace VHDL.Parser.visitors
 {
-    class VisitContext_clause
+    public class VisitContext_clause
     {
 
         /// <summary>
@@ -16,7 +16,7 @@ namespace VHDL.Parser.visitors
         /// <summary>
         /// 
         /// </summary>
-        List<VisitContext_item> visitContext_items { get; set; }
+        public List<VisitContext_item> visitContext_items { get; set; }
 
         /// <summary>
         /// context_clause
@@ -26,6 +26,7 @@ namespace VHDL.Parser.visitors
         /// <param name="ctx"></param>
         public VisitContext_clause(vhdlParser.Context_clauseContext ctx)
         {
+            visitContext_items = new List<VisitContext_item>();
             if (ctx == null)
                 return;
 

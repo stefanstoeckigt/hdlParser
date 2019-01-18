@@ -5,12 +5,13 @@ using vhdl;
 
 namespace VHDL.Parser.visitors
 {
-    class VisitContext_item
+    public class VisitContext_item
     {
         /// <summary>
         /// Parser error logger.
         /// </summary>
         private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+
 
         public VisitContext_item(vhdlParser.Context_itemContext ctx)
         {
