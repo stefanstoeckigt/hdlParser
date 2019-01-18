@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using vhdl;
 
 namespace VHDL.Parser.visitors
 {
+    [JsonObject(MemberSerialization.OptIn)]
     public class VisitDesign_unit
     {
         /// <summary>
@@ -15,11 +17,13 @@ namespace VHDL.Parser.visitors
         /// <summary>
         /// 
         /// </summary>
+        [JsonProperty(PropertyName = "Context Clause")]
         public VisitContext_clause visitContext_clause { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [JsonProperty(PropertyName = "Library Unit")]
         public VisitLibrary_unit visitLibrary_unit { get; set; }
 
         /// <summary> 

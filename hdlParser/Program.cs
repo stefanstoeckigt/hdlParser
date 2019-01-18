@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.IO;
 using VHDL.Parser;
 
@@ -12,6 +13,8 @@ namespace HDL.Parser
             {
                 VHDL.Parser.visitors.VisitDesign_file designFile;
                 new VHDL.Parser.Parser(sr.ReadToEnd(), out designFile);
+
+                string output = JsonConvert.SerializeObject(designFile);
             }
 
         }

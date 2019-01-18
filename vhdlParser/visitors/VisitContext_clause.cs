@@ -7,7 +7,7 @@ using vhdl;
 namespace VHDL.Parser.visitors
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class VisitDesign_file
+    public class VisitContext_clause
     {
         /// <summary>
         /// Parser error logger.
@@ -17,30 +17,25 @@ namespace VHDL.Parser.visitors
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty(PropertyName = "Design Units")]
-        public List<VisitDesign_unit> visitDesign_units { get; set; }
+        [JsonProperty(PropertyName = "Context Items")]
+        public List<VisitContext_item> visitContext_items { get; set; }
 
         /// <summary>
-        /// design_file
-        /// : ( design_unit )* EOF
+        /// context_clause
+        /// : ( context_item )*
         /// ;
         /// </summary>
         /// <param name="ctx"></param>
-        public VisitDesign_file(vhdlParser.Design_fileContext ctx)
+        public VisitContext_clause(vhdlParser.Context_clauseContext ctx)
         {
-            visitDesign_units = new List<VisitDesign_unit>();
+            visitContext_items = new List<VisitContext_item>();
             if (ctx == null)
                 return;
 
-            foreach(var item in ctx.design_unit())
+            foreach (var item in ctx.context_item())
             {
-                visitDesign_units.Add(new VisitDesign_unit(item));
+                visitContext_items.Add(new VisitContext_item(item));
             }
-
         }
-
-
-
-
     }
 }
