@@ -17,8 +17,8 @@ namespace VHDL.Parser
                 var commonTokenStream = new CommonTokenStream(lexer);
                 var parser = new vhdlParser(commonTokenStream);
 
-                var architectureParser = new parser.ArchitectureParser(parser.architecture_body());
-
+                var designFileParser = new parser.VisitDesignFile(parser.design_file());
+     
 
             }
             catch (Exception ex)

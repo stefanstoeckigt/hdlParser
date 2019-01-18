@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using vhdl;
 
-namespace VHDL.Parser.parser
+namespace VHDL.Parser.visitors
 {
-    class ArchitectureParser
+    class VisitArchitecture
     {
         /// <summary>
         /// architecture_body
@@ -17,7 +17,7 @@ namespace VHDL.Parser.parser
         /// ;
         /// </summary>
         /// <param name="ctx"></param>
-        public ArchitectureParser(vhdlParser.Architecture_bodyContext ctx)
+        public VisitArchitecture(vhdlParser.Architecture_bodyContext ctx)
         {
         }
     }
