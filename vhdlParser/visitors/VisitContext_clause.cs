@@ -6,8 +6,13 @@ using vhdl;
 
 namespace VHDL.Parser.visitors
 {
+    interface IVisitContext_clause
+    {
+        List<VisitContext_item> visitContext_items { get; set; }
+    }
+
     [JsonObject(MemberSerialization.OptIn)]
-    public class VisitContext_clause
+    public class VisitContext_clause: IVisitContext_clause
     {
         /// <summary>
         /// Parser error logger.
